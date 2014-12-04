@@ -14,6 +14,9 @@ dateTimes <- mapply(paste, data$Date, data$Time, SIMPLIFY = FALSE)
 # We convert this vector from strings to time-dqte objects
 dateTimes <- strptime(dateTimes, format = "%d/%m/%Y %H:%M:%S")
 
+# We know convert the global active power values from factors to real numbers
+data$Global_active_power <- as.numeric(as.character(data$Global_active_power))
+
 # We create the file in which we want to store our plot and plot it
 png(filename = "plot2.png")
 plot(dateTimes, data$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
