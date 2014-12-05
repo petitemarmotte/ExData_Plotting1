@@ -1,4 +1,4 @@
-#Construction of the second plot
+#Construction of the third plot
 
 # We start by reading the data and converting Date and Time from factors to strings
 data <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", nrows = 71000)
